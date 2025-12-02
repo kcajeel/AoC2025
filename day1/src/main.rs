@@ -26,6 +26,8 @@ fn main() {
             if dial.position == DIAL_MIN {
                 dial.password += 1;
             }
+            let rotation_zeroes = (dial.position + distance) / DIAL_MAX;
+            dial.password += rotation_zeroes;
         }
         println!("Password is: {}", dial.password);
     } else {
@@ -37,7 +39,7 @@ fn main() {
 
 struct Dial {
     position: i32,
-    password: u32,
+    password: i32,
 }
 impl Dial {
     /*
